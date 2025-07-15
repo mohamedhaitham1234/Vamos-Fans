@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vamos Fans - اشترك الآن</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background-image: url('https://images.unsplash.com/photo-1505765050516-f72dcac9c60b');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.6);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 24px;
+      margin-bottom: 40px;
+    }
+
+    button {
+      background-color: #e63946;
+      color: white;
+      padding: 15px 30px;
+      font-size: 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .form-container {
+      display: none;
+      background-color: white;
+      color: black;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 30px;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .form-container button {
+      background-color: #1d3557;
+    }
+
+    .thank-you {
+      background-color: white;
+      color: black;
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 500px;
+      margin: 30px auto;
+      display: none;
+      font-size: 20px;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>Vamos Fans</h1>
+    <p>استعد لأفضل مغامرة في إسبانيا! ⚽🏖️</p>
+    <p>السعر: <strong>1750 دولار</strong> شامل الإقامة والتذاكر</p>
+    <button onclick="showForm()">اشترك الآن</button>
+
+    <div class="form-container" id="formContainer">
+      <h2>سجل بياناتك</h2>
+      <form onsubmit="return showThankYou(event)">
+        <label>الاسم الكامل:</label>
+        <input type="text" required>
+
+        <label>السن:</label>
+        <input type="number" required>
+
+        <label>المحافظة:</label>
+        <select required>
+          <option>اختر المحافظة</option>
+          <option>القاهرة</option>
+          <option>الجيزة</option>
+          <option>الإسكندرية</option>
+          <option>الدقهلية</option>
+          <option>الشرقية</option>
+        </select>
+
+        <label>طريقة الدفع:</label>
+        <select required>
+          <option>اختر طريقة الدفع</option>
+          <option>Visa / MasterCard</option>
+          <option>فوري</option>
+          <option>تحويل بنكي</option>
+        </select>
+
+        <button type="submit">أكمل الحجز</button>
+      </form>
+    </div>
+
+    <div class="thank-you" id="thankYouMessage">
+      ✅ شكرًا للاشتراك معنا!  
+      <br>سوف تتلقى رسالة بالموعد.  
+      <br>وإذا أردت التحدث مع أحد أفراد خدمة العملاء اتصل على:  
+      <strong>16700</strong>
+    </div>
+  </div>
+
+  <script>
+    function showForm() {
+      document.getElementById("formContainer").style.display = "block";
+    }
+
+    function showThankYou(event) {
+      event.preventDefault(); // يمنع إعادة تحميل الصفحة
+      document.getElementById("formContainer").style.display = "none";
+      document.getElementById("thankYouMessage").style.display = "block";
+      return false;
+    }
+  </script>
+</body>
+</html>
